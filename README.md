@@ -45,7 +45,7 @@ microstack-users-service/
  │  │  │  ├─ model/
  │  │  │  └─ UsersApplication.java
  │  │  └─ resources/
- │  │     └─ application.properties
+ │  │     └─ application.yml
  ├─ pom.xml
  └─ Dockerfile
 ```
