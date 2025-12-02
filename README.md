@@ -1,0 +1,114 @@
+# Microservice Users
+
+A standalone User domain service built with Spring Boot and PostgreSQL – part of the Microstack distributed architecture.
+
+📌 Overview
+
+The Users Microservice is responsible for managing all user-related operations within the Microstack platform.
+This service runs independently, exposes RESTful APIs, and communicates with other microservices in a distributed architecture.
+
+It follows modern backend engineering practices:
+
+Isolated domain (User management)
+
+Independent build, deploy, and scaling
+
+Clean architecture with controllers, services, and repositories
+
+Integration with PostgreSQL using Spring Data JPA
+
+🛠 Tech Stack
+
+Java 17+
+
+Spring Boot 3+
+
+Spring Web
+
+Spring Data JPA
+
+PostgreSQL
+
+Maven
+
+Docker (optional for containerized environment)
+
+📁 Project Structure
+```
+microstack-users-service/
+ ├─ src/
+ │  ├─ main/
+ │  │  ├─ java/com/microstack/users/
+ │  │  │  ├─ controller/
+ │  │  │  ├─ service/
+ │  │  │  ├─ repository/
+ │  │  │  ├─ model/
+ │  │  │  └─ UsersApplication.java
+ │  │  └─ resources/
+ │  │     └─ application.yml
+ ├─ pom.xml
+ └─ Dockerfile
+```
+
+🚀 Running the Project
+1. Configure PostgreSQL
+
+Create a database:
+
+CREATE DATABASE microstack_users;
+
+
+Update application.properties:
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/microstack_users
+spring.datasource.username=postgres
+spring.datasource.password=your_password
+
+2. Run with Maven
+mvn spring-boot:run
+
+
+The service will start on:
+
+http://localhost:8080
+
+📡 Available Endpoints
+Method	Endpoint	Description
+GET	/users	Fetch all users
+GET	/users/{id}	Get user by ID
+POST	/users	Create a new user
+DELETE	/users/{id}	Delete a user
+
+Example payload for POST /users:
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com"
+}
+
+🧪 Testing
+
+Use Postman, Insomnia, or curl:
+
+curl http://localhost:8080/users
+
+🐳 Docker Support (optional)
+
+Build the image:
+
+docker build -t microservice-users .
+
+
+Run the container (requires PostgreSQL container or remote DB):
+
+docker run -p 8080:8080 microservice-users
+
+🔗 Integration in the Microstack Architecture
+
+This microservice is part of a larger polyglot architecture and integrates with:
+
+Angular Frontend (via API Gateway)
+
+Other backend services (Orders, Notifications, Inventory)
+
+Centralized monitoring and logging (future stage)
