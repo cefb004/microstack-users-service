@@ -1,1 +1,6 @@
+com\microstack\microstack_users\service\UserService.class
 com\microstack\microstack_users\MicrostackUsersApplication.class
+com\microstack\microstack_users\repository\UserRepository.class
+com\microstack\microstack_users\dto\UserRequest.class
+com\microstack\microstack_users\controller\UserController.class
+com\microstack\microstack_users\entity\User.class
